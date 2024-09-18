@@ -2,6 +2,17 @@
 
 import PackageDescription
 
+#if TUIST
+import ProjectDescription
+
+let packageSettings = PackageSettings(
+    productTypes: [
+        "Atomics": .framework
+    ]
+)
+
+#endif
+
 let package = Package(
     name: "mqtt-nio",
     platforms: [.iOS(.v12), .tvOS(.v12), .watchOS(.v6)],
